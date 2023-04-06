@@ -128,6 +128,13 @@ spec:
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeInstanceTemplate
 metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: "heewonk-bunker"
+    cnrm.cloud.google.com/force-destroy: "true"
+  labels:
+    environment: "staging"
+    owner: "heewonk"
+    team: "pso-japac"
   name: computebackendservice-dep-externalloadbalancing
 spec:
   machineType: n1-standard-1
