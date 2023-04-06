@@ -107,6 +107,9 @@ spec:
   projectRef:
      external: "projects/heewonk-bunker"
   location: us-west1-a
+  namedPort:
+    - name: http
+      port: 80
   baseInstanceName: app
   autoHealingPolicies:
     - healthCheckRef:
