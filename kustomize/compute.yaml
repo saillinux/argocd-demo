@@ -73,14 +73,7 @@ spec:
   loadBalancingScheme: EXTERNAL
   location: global
   protocol: HTTP
-  affinityCookieTtlSec: 360
-  connectionDrainingTimeoutSec: 60
-  securityPolicyRef:
-    name: computebackendservice-dep-externalloadbalancing
-  sessionAffinity: GENERATED_COOKIE
-  customRequestHeaders:
-    - "Trailer: custom-trailer"
-  logConfig:
+    logConfig:
     enable: false
   backend:
   - balancingMode: RATE
