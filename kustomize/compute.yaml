@@ -1,4 +1,59 @@
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeForwardingRule
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: "heewonk-bunker"
+    cnrm.cloud.google.com/force-destroy: "true"
+  labels:
+    environment: "staging"
+    owner: "heewonk"
+    team: "pso-japac"
+    label-one: "value-one"
+  name: computeforwardingrule-sample-global-with-target-http-proxy
+spec:
+  description: "A global forwarding rule"
+  target:
+    targetHTTPProxyRef:
+      name: computeforwardingrule-dep-global-with-target-http-proxy
+  portRange: "80"
+  ipProtocol: "TCP"
+  ipVersion: "IPV4"
+  location: global
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeTargetHTTPProxy
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: "heewonk-bunker"
+    cnrm.cloud.google.com/force-destroy: "true"
+  labels:
+    environment: "staging"
+    owner: "heewonk"
+    team: "pso-japac"
+  name: computeforwardingrule-dep-global-with-target-http-proxy
+spec:
+  urlMapRef:
+    name: computeforwardingrule-dep-global-with-target-http-proxy
+  location: global
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeURLMap
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: "heewonk-bunker"
+    cnrm.cloud.google.com/force-destroy: "true"
+  labels:
+    environment: "staging"
+    owner: "heewonk"
+    team: "pso-japac"
+  name: computeforwardingrule-dep-global-with-target-http-proxy
+spec:
+  defaultService:
+    backendServiceRef:
+      name: computebackendservice-sample-externalloadbalancing
+  location: global
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeBackendService
 metadata:
   annotations:
