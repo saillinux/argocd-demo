@@ -8,7 +8,7 @@ metadata:
     environment: "staging"
     owner: "heewonk"
     team: "pso-japac"
-  name: heewonk-bunker-storage-demo
+  name: heewonk-bunker-storage-demo-2
 spec:
   lifecycleRule:
     - action:
