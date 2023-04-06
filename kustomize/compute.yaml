@@ -65,8 +65,7 @@ metadata:
     team: "pso-japac"
   name: computebackendservice-sample-externalloadbalancing
 spec:
-  description: External backend service with cookie-based session affinity.
-  portName: cookie-cloud
+  portName: http
   timeoutSec: 30
   healthChecks:
   - healthCheckRef:
