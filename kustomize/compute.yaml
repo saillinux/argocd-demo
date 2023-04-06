@@ -73,7 +73,7 @@ spec:
       name: computebackendservice-dep-externalloadbalancing
   loadBalancingScheme: EXTERNAL
   location: global
-  protocol: HTTPS
+  protocol: HTTP
   affinityCookieTtlSec: 360
   connectionDrainingTimeoutSec: 60
   securityPolicyRef:
@@ -106,7 +106,7 @@ metadata:
   name: computebackendservice-dep-externalloadbalancing
 spec:
   httpsHealthCheck:
-    port: 443
+    port: 80
   location: global
 ---
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
@@ -121,12 +121,25 @@ metadata:
     team: "pso-japac"
   name: computebackendservice-dep-externalloadbalancing
 spec:
-  namedPort:
-  - name: cookie-cloud
-    port: 8444
-  zone: us-central1-a
-  networkRef:
+  zone: us-west1-a
+  instanceTemplateRef:
     name: computebackendservice-dep-externalloadbalancing
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeInstanceTemplate
+metadata:
+  name: computebackendservice-dep-externalloadbalancing
+spec:
+  machineType: n1-standard-1
+  disk:
+    - sourceImageRef:
+        external: debian-cloud/debian-11
+      boot: true
+  networkInterface:
+    - networkRef:
+        name: computebackendservice-dep-externalloadbalancing
+      subnetworkRef:
+        name: computebackendservice-dep-externalloadbalancing
 ---
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeNetwork
