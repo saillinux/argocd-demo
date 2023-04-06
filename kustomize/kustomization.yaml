@@ -1,6 +1,5 @@
 namePrefix: kustomize-
 resources:
 - storage-demo.yaml
-- storage-demo-2.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
