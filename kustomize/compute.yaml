@@ -13,4 +13,4 @@ spec:
   ipCidrRange: 10.2.0.0/16
   region: us-west1
   networkRef:
-    name: computebackendservice-dep-externalloadbalancing
+    name: default
