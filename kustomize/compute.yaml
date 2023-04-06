@@ -73,7 +73,7 @@ spec:
   loadBalancingScheme: EXTERNAL
   location: global
   protocol: HTTP
-    logConfig:
+  logConfig:
     enable: false
   backend:
   - balancingMode: RATE
@@ -195,27 +195,6 @@ metadata:
 spec:
   routingMode: GLOBAL
   autoCreateSubnetworks: false
----
-apiVersion: compute.cnrm.cloud.google.com/v1beta1
-kind: ComputeSecurityPolicy
-metadata:
-  annotations:
-    cnrm.cloud.google.com/project-id: "heewonk-bunker"
-    cnrm.cloud.google.com/force-destroy: "true"
-  labels:
-    environment: "staging"
-    owner: "heewonk"
-    team: "pso-japac"
-  name: computebackendservice-dep-externalloadbalancing
-spec:
-  rule:
-  - action: deny(403)
-    priority: 2147483647
-    match:
-      versionedExpr: SRC_IPS_V1
-      config:
-        srcIpRanges:
-        - "*"
 ---
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeSubnetwork
