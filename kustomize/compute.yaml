@@ -16,7 +16,6 @@ spec:
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeSubnetwork
 metadata:
-metadata:
   annotations:
     cnrm.cloud.google.com/project-id: "heewonk-bunker"
     cnrm.cloud.google.com/force-destroy: "true"
