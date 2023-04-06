@@ -104,7 +104,6 @@ metadata:
     team: "pso-japac"
   name: computeinstancegroupmanager-sample-zonal
 spec:
-  description: Compute instance group with two specified instances and named http and https ports.
   instances:
   - name: computeinstancegroup-dep1
   - name: computeinstancegroup-dep2
