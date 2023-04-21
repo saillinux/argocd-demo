@@ -19,7 +19,7 @@ spec:
     boot: true
   networkInterface:
   - networkRef:
-      external: {{ .Values.instance.vpc | default }}
+      external: default
     subnetworkProject: {{ .Values.project.id }}
     subnetworkRef:
-      external: {{ .Values.instance.subnet | default }}
+      external: default
