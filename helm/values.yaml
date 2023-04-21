@@ -10,3 +10,5 @@ bucket:
     age: 7
   versioning: true
   uniform: true
+instance:
+  zone: us-west1-a
