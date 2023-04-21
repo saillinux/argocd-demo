@@ -13,7 +13,7 @@ spec:
   projectRef:
     external: "projects/{{ .Values.project.id }}"
   location: {{ .Values.instance.region }}
-  namedPort:
+  namedPorts:
   - name: http
     port: 80
   autoHealingPolicies:
