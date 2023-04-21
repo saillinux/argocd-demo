@@ -20,7 +20,7 @@ spec:
         external: {{ .Values.instance.image }}
   networkInterface:
     - subnetworkRef:
-        name: computebackendservice-dep-externalloadbalancing
+        external: computebackendservice-dep-externalloadbalancing
       aliasIpRange:
         - ipCidrRange: /24
           subnetworkRangeName: cloudrange
