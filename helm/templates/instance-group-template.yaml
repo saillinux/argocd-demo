@@ -19,7 +19,7 @@ spec:
       initialDelaySec: 300
   targetSize: 3
   instanceTemplateRef:
-    external: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-template"
+    name: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-template"
   updatePolicy:
     instanceRedistributionType: PROACTIVE
     minimalAction: RESTART
