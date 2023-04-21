@@ -13,6 +13,9 @@ spec:
   projectRef:
     external: "projects/{{ .Values.project.id }}"
   location: {{ .Values.instance.region }}
+  namedPort:
+  - name: http
+    port: 80
   autoHealingPolicies:
     - healthCheckRef:
         name: "{{ .Values.project.id }}-{{ .Release.Name }}-healthcheck"
