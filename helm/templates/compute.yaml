@@ -21,5 +21,6 @@ spec:
   networkInterface:
     - networkRef:
         external: computebackendservice-dep-externalloadbalancing
+      subnetworkProject: {{ .Values.project.id }}
       subnetworkRef:
         external: computebackendservice-dep-externalloadbalancing
