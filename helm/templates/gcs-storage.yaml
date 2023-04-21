@@ -16,5 +16,5 @@ spec:
       condition:
         age: {{ .Values.bucket.lifecycle.age }}
   versioning:
-    enabled: "{{ .Values.bucket.versioning }}"
+    enabled: {{ .Values.bucket.versioning }}
   uniformBucketLevelAccess: {{ .Values.bucket.uniform }}
