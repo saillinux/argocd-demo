@@ -1,0 +1,12 @@
+project:
+  id: heewonk-bunker
+destroy: true
+env:
+  name: dev
+owner: heewonk@heewonk.joonix.net
+team: pso-japac
+bucket:
+  lifecycle:
+    age: 7
+  versioning: true
+  uniform: true
