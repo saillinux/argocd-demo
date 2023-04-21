@@ -11,5 +11,6 @@ bucket:
   versioning: true
   uniform: true
 instance:
+  machineType: n1-standard-1
   zone: us-west1-a
   image: debian-cloud/debian-11

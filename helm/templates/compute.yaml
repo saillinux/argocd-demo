@@ -11,9 +11,16 @@ metadata:
   name: "{{ .Release.Name }}-instance-1"
 spec:
   zone: {{ .Values.instance.zone }}
+  machineType: {{ .Values.instance.machineType }}
   bootDisk:
     initializeParams:
       size: 24
       type: pd-ssd
       sourceImageRef:
         external: {{ .Values.instance.image }}
+  networkInterface:
+    - subnetworkRef:
+        name: computebackendservice-dep-externalloadbalancing
+      aliasIpRange:
+        - ipCidrRange: /24
+          subnetworkRangeName: cloudrange
