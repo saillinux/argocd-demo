@@ -12,3 +12,4 @@ bucket:
   uniform: true
 instance:
   zone: us-west1-a
+  image: debian-cloud/debian-11

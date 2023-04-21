@@ -11,3 +11,9 @@ metadata:
   name: "{{ .Release.Name }}-instance-1"
 spec:
   zone: {{ .Values.instance.zone }}
+  bootDisk:
+    initializeParams:
+      size: 24
+      type: pd-ssd
+      sourceImageRef:
+        external: {{ .Values.instance.image }}
