@@ -3,7 +3,7 @@ project:
 destroy: true
 env:
   name: dev
-owner: heewonk@heewonk.joonix.net
+owner: heewonk
 team: pso-japac
 bucket:
   lifecycle:
