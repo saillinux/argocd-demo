@@ -15,4 +15,4 @@ instance:
   zone: us-west1-a
   region: us-west1
   image: debian-cloud/debian-11
-version: 1.0.0
+version: 1
