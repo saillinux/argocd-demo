@@ -57,7 +57,7 @@ metadata:
     environment: {{ .Values.env.name }}
     owner: {{ .Values.owner }}
     team: {{ .Values.team }}
-  name: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-template"
+  name: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-template-{{ .Values.version }}"
 spec:
   region: {{ .Values.instance.region }}
   machineType: {{ .Values.instance.machineType }}
