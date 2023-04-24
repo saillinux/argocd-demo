@@ -64,6 +64,8 @@ metadata:
     team: {{ .Values.team }}
   name: "{{ .Values.project.id }}-{{ .Release.Name }}-backend-service"
 spec:
+  projectRef:
+    external: "projects/{{ .Values.project.id }}"
   portName: http
   timeoutSec: 30
   healthChecks:
