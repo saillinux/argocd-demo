@@ -79,4 +79,4 @@ spec:
     description: An instance group serving this backend.
     group:
       instanceGroupRef:
-        external: "{{ .Values.project.id }}/{{ .Values.project.id }}-{{ .Release.Name }}-instance-group"
+        external: computeinstancegroupmanager-sample-zonal
