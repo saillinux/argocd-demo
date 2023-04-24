@@ -70,7 +70,7 @@ spec:
   - healthCheckRef:
       name: "{{ .Values.project.id }}-{{ .Release.Name }}-healthcheck"
   loadBalancingScheme: EXTERNAL
-  location: global
+  location: {{ .Value.instance.region }}
   protocol: HTTP
   logConfig:
     enable: false
