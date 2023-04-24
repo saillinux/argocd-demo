@@ -64,8 +64,6 @@ metadata:
     team: {{ .Values.team }}
   name: "{{ .Values.project.id }}-{{ .Release.Name }}-backend-service"
 spec:
-  projectRef:
-    external: "projects/{{ .Values.project.id }}"
   portName: http
   timeoutSec: 30
   healthChecks:
@@ -83,4 +81,4 @@ spec:
     maxRate: 10000
     group:
       instanceGroupRef:
-        name: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-group"
+        external: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-group"
