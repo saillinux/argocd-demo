@@ -13,7 +13,7 @@ spec:
   description: "A global forwarding rule"
   target:
     targetHTTPProxyRef:
-      external: "{{ .Values.project.id }}-{{ .Release.Name }}-target-http-proxy"
+      name: "{{ .Values.project.id }}-{{ .Release.Name }}-target-http-proxy"
   portRange: "80"
   ipProtocol: "TCP"
   ipVersion: "IPV4"
@@ -79,4 +79,4 @@ spec:
     description: An instance group serving this backend.
     group:
       instanceGroupRef:
-        external: computeinstancegroupmanager-sample-zonal
+        name: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-group"
