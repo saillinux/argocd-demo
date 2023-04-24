@@ -76,9 +76,7 @@ spec:
     enable: false
   backend:
   - balancingMode: RATE
-    capacityScaler: 1
     description: An instance group serving this backend.
-    maxRate: 10000
     group:
       instanceGroupRef:
         external: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-group"
