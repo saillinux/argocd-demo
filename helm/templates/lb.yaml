@@ -32,7 +32,7 @@ metadata:
   name: "{{ .Values.project.id }}-{{ .Release.Name }}-target-http-proxy"
 spec:
   urlMapRef:
-    external: "{{ .Values.project.id }}-{{ .Release.Name }}-urlmap"
+    name: "{{ .Values.project.id }}-{{ .Release.Name }}-urlmap"
   location: global
 ---
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
@@ -49,7 +49,7 @@ metadata:
 spec:
   defaultService:
     backendServiceRef:
-      external: "{{ .Values.project.id }}-{{ .Release.Name }}-backend-service"
+      name: "{{ .Values.project.id }}-{{ .Release.Name }}-backend-service"
   location: global
 ---
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
@@ -68,7 +68,7 @@ spec:
   timeoutSec: 30
   healthChecks:
   - healthCheckRef:
-      external: "{{ .Values.project.id }}-{{ .Release.Name }}-healthcheck"
+      name: "{{ .Values.project.id }}-{{ .Release.Name }}-healthcheck"
   loadBalancingScheme: EXTERNAL
   location: global
   protocol: HTTP
@@ -81,4 +81,4 @@ spec:
     maxRate: 10000
     group:
       instanceGroupRef:
-        external: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-group"
+        name: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-group"
