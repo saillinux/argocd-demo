@@ -68,7 +68,7 @@ spec:
   timeoutSec: 30
   healthChecks:
   - healthCheckRef:
-      name: "{{ .Values.project.id }}-{{ .Release.Name }}-healthcheck"
+      external: "{{ .Values.project.id }}-{{ .Release.Name }}-healthcheck"
   loadBalancingScheme: EXTERNAL
   location: global
   protocol: HTTP
