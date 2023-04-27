@@ -68,7 +68,7 @@ spec:
   timeoutSec: 30
   healthChecks:
   - healthCheckRef:
-      name: "{{ .Values.project.id }}-{{ .Release.Name }}-healthcheck"
+      name: "{{ .Values.project.id }}-{{ .Release.Name }}-backend-healthcheck"
   loadBalancingScheme: EXTERNAL
   location: global
   protocol: HTTP
@@ -80,3 +80,19 @@ spec:
     group:
       instanceGroupRef:
         external: "https://www.googleapis.com/compute/v1/projects/{{ .Values.project.id }}/regions/{{ .Values.instance.region }}/instanceGroups/{{ .Values.project.id }}-{{ .Release.Name }}-instance-group"
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeHealthCheck
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: {{ .Values.project.id }}
+    cnrm.cloud.google.com/force-destroy: "{{ .Values.destroy }}"
+  labels:
+    environment: {{ .Values.env.name }}
+    owner: {{ .Values.owner }}
+    team: {{ .Values.team }}
+  name: "{{ .Values.project.id }}-{{ .Release.Name }}-backend-healthcheck"
+spec:
+  httpHealthCheck:
+    port: 80
+  location: global
