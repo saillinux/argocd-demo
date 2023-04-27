@@ -78,7 +78,7 @@ spec:
   - balancingMode: RATE
     capacityScaler: 1
     description: An instance group serving this backend.
-    maxRatePerEndpoint: 10
+    maxRate: 10000
     group:
       instanceGroupRef:
         external: "https://www.googleapis.com/compute/v1/projects/{{ .Values.project.id }}/regions/{{ .Values.instance.region }}/instanceGroups/{{ .Values.project.id }}-{{ .Release.Name }}-instance-group"
