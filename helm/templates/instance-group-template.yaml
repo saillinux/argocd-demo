@@ -45,7 +45,7 @@ metadata:
 spec:
   httpHealthCheck:
     port: 80
-  location: {{ .Values.instance.region }}
+  location: global
 ---
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeInstanceTemplate
