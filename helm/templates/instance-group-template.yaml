@@ -64,7 +64,10 @@ spec:
     - https-server
   region: {{ .Values.instance.region }}
   machineType: {{ .Values.instance.machineType }}
-  metadataStartupScript: apt-get install apache2 -y
+  metadataStartupScript: |
+    apt-get install apache2 -y
+    systemctl enable apache2
+    systemctl start apache2
   disk:
   - sourceImageRef:
       external: {{ .Values.instance.image }}
