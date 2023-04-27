@@ -59,6 +59,9 @@ metadata:
     team: {{ .Values.team }}
   name: "{{ .Values.project.id }}-{{ .Release.Name }}-instance-template-{{ .Values.version }}"
 spec:
+  tags:
+    - http-server
+    - https-server
   region: {{ .Values.instance.region }}
   machineType: {{ .Values.instance.machineType }}
   metadataStartupScript: apt-get install apache2 -y
