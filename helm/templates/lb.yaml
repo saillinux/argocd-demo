@@ -66,8 +66,11 @@ metadata:
 spec:
   portName: http
   timeoutSec: 30
+  healthChecks:
+  - healthCheckRef:
+      name: "{{ .Values.project.id }}-{{ .Release.Name }}-healthcheck"
   loadBalancingScheme: EXTERNAL
-  location: {{ .Values.instance.region }}
+  location: global
   protocol: HTTP
   logConfig:
     enable: false
