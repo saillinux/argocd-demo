@@ -29,7 +29,7 @@ spec:
     maxSurge:
       fixed: 3
     maxUnavailable:
-      fixed: 3
+      fixed: 1
 ---
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeHealthCheck
