@@ -65,9 +65,8 @@ spec:
   region: {{ .Values.instance.region }}
   machineType: {{ .Values.instance.machineType }}
   metadataStartupScript: |
-    apt-get install apache2 -y
-    systemctl enable apache2
-    systemctl start apache2
+    sudo apt update
+    sudo apt install apache2 -y
   disk:
   - sourceImageRef:
       external: {{ .Values.instance.image }}
