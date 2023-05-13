@@ -15,4 +15,5 @@ instance:
   zone: us-west1-a
   region: us-west1
   image: debian-cloud/debian-11
+  targetSize: 3
 version: 1
