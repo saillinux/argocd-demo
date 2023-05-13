@@ -27,9 +27,9 @@ spec:
     instanceRedistributionType: PROACTIVE
     minimalAction: REPLACE
     maxSurge:
-      fixed: 6
+      fixed: {{ .Values.instance.targetSize }}
     maxUnavailable:
-      fixed: 0
+      fixed: 1
 ---
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeHealthCheck
