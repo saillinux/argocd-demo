@@ -73,7 +73,7 @@ spec:
   location: global
   protocol: HTTP
   logConfig:
-    enable: false
+    enable: true
   backend:
   - balancingMode: RATE
     capacityScaler: 1
